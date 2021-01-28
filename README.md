@@ -1,4 +1,4 @@
-# Introduction à Terraform
+# Introduction to Terraform
 
 ## Installation
 Download Terraform here: https://www.terraform.io/downloads.html
