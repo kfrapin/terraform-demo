@@ -14,7 +14,7 @@ provider "aws" {
 }
 
 # step 1 
-# vpc and subnet reation
+# vpc and subnet
 resource "aws_vpc" "demo_vpc" {
   cidr_block = "10.1.0.0/16"
   tags = {
