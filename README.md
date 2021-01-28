@@ -1,8 +1,8 @@
 # Introduction to Terraform
 
 ## Installation
-Download Terraform here: https://www.terraform.io/downloads.html
-And put the binary into your system path
+Download Terraform here: https://www.terraform.io/downloads.html,
+and put the binary into your system path
 
 On MacOS, `brew` users can use the [HashiCorp Homebrew Tap](https://github.com/hashicorp/homebrew-tap)
 
@@ -35,7 +35,7 @@ The following AWS datasources are used in the `aws-demo/main.tf` file:
 * `aws_ami`
 
 ## Terrafom apply
-The `aws-demo/main.tf` file will try to create a whole infrastructure from scratch on AWS Paris (`eu-west-3`) with a brand new VPC and an EC2 inside that VPC able to communicate with Internet
+The `aws-demo/main.tf` file will try to create a little infrastructure from scratch on **AWS Paris** (`eu-west-3`) with a brand new VPC and an EC2 inside that VPC able to communicate with Internet
 ```sh
 # initialize terraform (modules installation)
 terraform init
