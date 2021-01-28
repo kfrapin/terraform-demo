@@ -1,6 +1,3 @@
-# terraform download, installation system path
-# terraform registry
-
 # step 0
 # provider aws
 terraform {
@@ -11,7 +8,6 @@ terraform {
     }
   }
 }
-
 provider "aws" {
   # paris
   region = "eu-west-3"
@@ -85,8 +81,8 @@ egress {
   }
 }
 resource "aws_key_pair" "demo_key" {
-  key_name = "kfrapin-key"
-  public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCrJ2NbXPq5Q6q5GWSQ7I30je87CTCp9Mwru32iWDrIoQ4Iot7auhfD0EXsIuCKhfPJ+1RLe0KKbrxUCu45UR85cFMuvYOQ4NQ2Hn+TFCxXHppCn3ribOUXMJ6zvwNytXTEenE5+FuGkyNS5ibguKVfWebutJRKnsUL1j5s+JhU7YGJZFEto/U4hcU1e3xhvIj/JoIji0xWW4H1Qp8GtScGiU3aJ7MZ3xwjIDvsiU0y8l8K9d5wEooQo91R1cQlwQ/qFUI2Kc85owrRzqGuFiF5J9ss0LIpMkt4LUid3AgBypuExSXn3RmJ9LUD634O1DAvnCbqqUsaDHuShkUMWgnrKP5Guu3pioA4sARxiaLd7xHw+BpeI+F1n57Cul4AMAuzIaILYLYGVjyuhC9zG8l4tYhtzuKUQG+RF0eQN4KIiprp7gxkDpF8YXts/+b+XtaH2HryZgg9EeBCofQnEIhOV7aOIIKpsXyL3UwIrKL2GtkdbFyE5sjIWnVJbVOlPHxAZuOFJ0vXFFwgdl/HMpE0m4CUapqNlzUeiPhuVOFrNxxOJnREsOZbN8w5Omvk2/BEZjlXlv+gEmuyrShmfNQfwDd3KCmgRIVUuyTPYHhbyXA5Jk+OHr7+QPYipRhY0iRXnrzNvTZGe8VdmQ0ws4Q9DCbfn+xFAK3xkKzNMD0/xw== kevin.frapin@intercloud.com"
+  key_name = "demo-key"
+  public_key = "<your-ssh-public-key>"
 }
 resource "aws_instance" "demo_instance" {
     instance_type = "t2.micro"
@@ -101,18 +97,7 @@ resource "aws_instance" "demo_instance" {
 }
 
 # step 4
-# output
+# output ec2 public ip
 output "demo_instance_ip" {
   value = aws_instance.demo_instance.public_ip
 }
-
-# deploy docker and nginx
-# - yum install docker
-# - systemctl start docker
-# - docker run --publish 80:80 nginx
-
-# step 4
-# going further:
-# - load balancer
-# - auto-scaling group
-# no limit!
